@@ -23,6 +23,32 @@ A powerful VBA-based tool for bulk translating Excel workbooks from English to G
 - **Custom translation tables** for domain-specific terminology
 - **Professional results** in minutes, not hours
 
+## 🌍 Multi-Language Workflow
+
+This tool is particularly useful for organizations that maintain master versions of documents in English and need to distribute them in multiple languages. Here's the recommended workflow:
+
+### ✅ Master-First Approach
+- **Maintain master documents in English** - all updates and changes happen in the English version
+- **Translate on-demand** - when you need a German (or other language) version, simply run the translation tool
+- **Consistent updates** - any changes to the master English file can be quickly translated to other languages
+- **Version control** - keep your English master as the single source of truth
+
+### ✅ Benefits for Multi-Language Teams
+- **Single source of truth** - no need to maintain separate files for each language
+- **Faster updates** - changes only need to be made once in the English master
+- **Consistency** - all language versions stay synchronized with the master
+- **Reduced errors** - no risk of forgetting to update one language version
+- **Scalable** - easy to add new languages by creating additional translation tables
+
+### ✅ Recommended Process
+1. **Create and maintain** your Excel documents in English
+2. **Set up translation tables** for each target language
+3. **Make updates** only to the English master file
+4. **Run translation tool** whenever you need updated versions in other languages
+5. **Distribute** the translated files to your team
+
+This approach ensures your team always works with the most current information while maintaining consistency across all language versions.
+
 ## 🚀 Features
 
 ### ✅ Comprehensive Translation Coverage
