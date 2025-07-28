@@ -36,29 +36,38 @@ A powerful VBA-based tool for bulk translating Excel workbooks from English to G
 
 ## 🛠️ Setup Instructions
 
-### 1. Enable Developer Tab
-1. Open Excel
-2. Go to **File** → **Options** → **Customize Ribbon**
-3. Check **Developer** in the right column
-4. Click **OK**
+You have two options to use this translation tool:
 
-### 2. Create Translation Table
-1. Create a new sheet named **"German"**
-2. Insert a table with columns:
-   - **Column A**: English terms
-   - **Column B**: German translations
-3. Name the table **"Translations_EN_to_DE"**
+### Option 1: Use the Pre-built Tool (Recommended)
+1. **Download** the `Tool - Translate Excel Document v1.2.xlsm` file from this repository
+2. **Open** the file in Excel (enable macros when prompted)
+3. **Configure** the translation table and file paths as described below
+4. **Start translating** immediately!
 
-### 3. Configure File Paths
-Create named cells in your workbook:
-- **Cell named "targetPath"**: File path (e.g., `C:\Documents\`)
-- **Cell named "targetFileName"**: Excel file name (e.g., `MyFile.xlsx`)
+### Option 2: Implement in Your Own Excel Document
+1. **Enable Developer Tab**:
+   - Open Excel
+   - Go to **File** → **Options** → **Customize Ribbon**
+   - Check **Developer** in the right column
+   - Click **OK**
 
-### 4. Import VBA Code
-1. Press **Alt + F11** to open VBA Editor
-2. Insert → Module
-3. Copy and paste the `BulkTranslateInTargetWorkbook()` function
-4. Save the workbook as **.xlsm** (Excel Macro-Enabled Workbook)
+2. **Create Translation Table**:
+   - Create a new sheet named **"German"**
+   - Insert a table with columns:
+     - **Column A**: English terms
+     - **Column B**: German translations
+   - Name the table **"Translations_EN_to_DE"**
+
+3. **Configure File Paths**:
+   Create named cells in your workbook:
+   - **Cell named "targetPath"**: File path (e.g., `C:\Documents\`)
+   - **Cell named "targetFileName"**: Excel file name (e.g., `MyFile.xlsx`)
+
+4. **Import VBA Code**:
+   - Press **Alt + F11** to open VBA Editor
+   - Insert → Module
+   - Copy and paste the code from `translate.vb` file
+   - Save the workbook as **.xlsm** (Excel Macro-Enabled Workbook)
 
 ## 📖 Usage
 
@@ -153,7 +162,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For questions or support:
 - Create an issue on GitHub
-
+- Visit: https://ampX-shop.de
 
 ---
 
