@@ -2,6 +2,27 @@
 
 A powerful VBA-based tool for bulk translating Excel workbooks from English to German (or any language pair). This tool automatically translates text in cells, sheet names, chart titles, and text boxes across entire Excel workbooks.
 
+## ⚠️ Why Not Use Free Translation Services?
+
+**Google Translate and free DeepL limitations for Excel documents:**
+
+- **❌ No Excel file support**: These services only translate text, not Excel files
+- **❌ Manual copy-paste required**: You'd need to copy each cell individually
+- **❌ No batch processing**: Can't translate entire workbooks at once
+- **❌ No sheet name translation**: Free services can't rename Excel sheets
+- **❌ No chart title support**: Chart titles remain untranslated
+- **❌ No text box translation**: Shapes and text boxes are ignored
+- **❌ Format loss**: Copying text loses Excel formatting and formulas
+- **❌ Time consuming**: Manual process takes hours for large files
+
+**✅ This tool solves all these problems:**
+- **Bulk processing** of entire Excel workbooks
+- **Preserves formatting** and formulas
+- **Translates everything**: cells, sheets, charts, text boxes
+- **Automated workflow** - no manual copy-paste needed
+- **Custom translation tables** for domain-specific terminology
+- **Professional results** in minutes, not hours
+
 ## 🚀 Features
 
 ### ✅ Comprehensive Translation Coverage
@@ -164,6 +185,6 @@ For questions or support:
 - Create an issue on GitHub
 - Visit: https://ampX-shop.de
 
----
+
 
 **Note**: This tool is specifically optimized for bulk translation workflows and may not be suitable for real-time translation needs. For live translation services, consider using professional translation APIs. 
