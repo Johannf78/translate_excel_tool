@@ -128,14 +128,47 @@ Sub BulkTranslateInTargetWorkbook()
         ' OPTIMIZATION 3: Process cell content with single loop through translations
         Set rng = targetSheet.UsedRange
         If Not rng Is Nothing Then
-            For i = 1 To translationCount
-                On Error Resume Next
-                If rng.Replace(What:=findTexts(i), Replacement:=replaceTexts(i), LookAt:=xlPart) = True Then
-                    replacementsMade = replacementsMade + 1
-                    Application.StatusBar = "Replacements made: " & replacementsMade
-                End If
-                On Error GoTo 0
-            Next i
+            ' Check if current range is part of an excluded table
+            Dim shouldSkipRange As Boolean
+            shouldSkipRange = False
+            
+            ' List of tables to exclude from translation
+            Dim excludedTables As Variant
+            excludedTables = Array("Table_relevant_data", "query_table_relavant_data", "Table_critical_data")
+            
+            ' Check if current range overlaps with any excluded table
+            Dim table As ListObject
+            For Each table In targetSheet.ListObjects
+                Dim tableName As String
+                tableName = table.Name
+                
+                ' Check if this table should be excluded
+                Dim j As Long
+                For j = LBound(excludedTables) To UBound(excludedTables)
+                    If tableName = excludedTables(j) Then
+                        ' Check if current range overlaps with excluded table
+                        If Not Intersect(rng, table.Range) Is Nothing Then
+                            shouldSkipRange = True
+                            Application.StatusBar = "Skipping excluded table: " & tableName
+                            Exit For
+                        End If
+                    End If
+                Next j
+                
+                If shouldSkipRange Then Exit For
+            Next table
+            
+            ' Only process range if it's not excluded
+            If Not shouldSkipRange Then
+                For i = 1 To translationCount
+                    On Error Resume Next
+                    If rng.Replace(What:=findTexts(i), Replacement:=replaceTexts(i), LookAt:=xlPart) = True Then
+                        replacementsMade = replacementsMade + 1
+                        Application.StatusBar = "Replacements made: " & replacementsMade
+                    End If
+                    On Error GoTo 0
+                Next i
+            End If
         End If
         
         ' OPTIMIZATION 4: Process chart titles efficiently
@@ -217,9 +250,3 @@ Sub BulkTranslateInTargetWorkbook()
     Set targetWorkbook = Nothing
     MsgBox "Translation completed successfully! Total replacements: " & replacementsMade, vbInformation
 End Sub
-
-
-
-
-
-
